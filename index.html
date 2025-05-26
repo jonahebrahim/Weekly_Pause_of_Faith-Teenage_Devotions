@@ -1,98 +1,119 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Weekly Pause of Faith</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            max-width: 600px;
-            margin: 40px auto;
-            padding: 0 20px;
-            background-color: #f9f9f9;
-            color: #333;
-            text-align: center;
-        }
-        header {
-            margin-bottom: 30px;
-        }
-        .date-week {
-            font-weight: bold;
-            font-size: 1.2em;
-            margin-bottom: 20px;
-        }
-        p.intentions {
-            font-size: 1em;
-            line-height: 1.5em;
-            margin-bottom: 30px;
-        }
-        .btn {
-            display: inline-block;
-            margin: 10px 15px;
-            padding: 12px 25px;
-            font-size: 1.1em;
-            color: white;
-            background-color: #007BFF;
-            border: none;
-            border-radius: 5px;
-            text-decoration: none;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-        .btn:hover {
-            background-color: #0056b3;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Weekly Pause of Faith - Teenage Devotions</title>
+  <style>
+    :root {
+      --theme-blue: #34699A;
+      --theme-blue-dark: #2A5676;
+      --text-color: #222;
+      --bg-color: #f0f4f8;
+      --button-radius: 8px;
+      --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    body {
+      font-family: var(--font-family);
+      max-width: 700px;
+      margin: 30px auto;
+      padding: 0 20px 40px 20px;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      text-align: center;
+    }
+    h1 {
+      color: var(--theme-blue);
+      margin-bottom: 5px;
+    }
+    p.intro {
+      font-size: 1.1rem;
+      margin: 0 0 25px;
+      color: #444;
+    }
+    #dateWeek {
+      font-style: italic;
+      color: #555;
+      margin-bottom: 30px;
+    }
+    .image-section {
+      margin-bottom: 40px;
+    }
+    .image-section img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      margin-top: 10px;
+    }
+    .image-section p {
+      font-weight: 600;
+      font-size: 1rem;
+      color: var(--theme-blue-dark);
+      margin: 0;
+    }
+    .buttons {
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+      flex-wrap: wrap;
+    }
+    button {
+      background-color: var(--theme-blue);
+      color: white;
+      border: none;
+      padding: 15px 28px;
+      font-size: 1.1rem;
+      border-radius: var(--button-radius);
+      cursor: pointer;
+      box-shadow: 0 4px 6px rgba(52,105,154,0.5);
+      transition: background-color 0.3s ease, transform 0.2s ease;
+      min-width: 180px;
+    }
+    button:hover {
+      background-color: var(--theme-blue-dark);
+      transform: scale(1.05);
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <h1>Weekly Pause of Faith</h1>
-        <p><em>Devotions for Teens</em></p>
-    </header>
+  <h1>Weekly Pause of Faith - Teenage Devotions</h1>
+  <p class="intro">
+    Welcome! This site is your weekly place to pause, reflect, and grow in faith through devotions designed especially for teens.  
+    Explore meaningful prayer ideas and spiritual encouragement every week.
+  </p>
+  <div id="dateWeek"></div>
 
-    <div class="date-week" id="dateWeekDisplay">
-        <!-- Date and week number will appear here -->
-    </div>
+  <div class="image-section">
+    <p>Teaching Teens to Pray: Building a strong prayer life as a foundation for faith.</p>
+    <img src="https://israelmyglory.org/wp-content/uploads/2011/03/TeachingTeenstoPray.jpg" alt="Teaching Teens to Pray" />
+  </div>
 
-    <p class="intentions">
-        This site exists to provide teens with a weekly pause — a chance to reflect, pray, and grow closer to God.
-        Each week, we share a devotion that’s simple, honest, and made just for you.  
-        Whether you’re new to faith or have been walking with Jesus for a while, this space is here to encourage and inspire you.
-    </p>
+  <div class="image-section">
+    <p>Praying for Your Children: The power of prayer in guiding and supporting teenagers.</p>
+    <img src="https://howtoloveyourteenager.com/wp-content/uploads/2023/10/Praying-for-Your-Children-6-Reasons-Why-You-Need-to-Pray-for-Your-Teen-Image-1.jpg" alt="Praying for Your Children" />
+  </div>
 
-    <!-- Buttons to devotions -->
-    <a href="#" id="recent-devotion" class="btn">Most Recent Devotion</a>
-    <a href="devotion-list.html" class="btn">See All Devotions</a>
+  <div class="buttons">
+    <button onclick="location.href='devotion1.html'">Most Recent Devotion</button>
+    <button onclick="location.href='devotion-list.html'">See All Devotions</button>
+  </div>
 
-    <script>
-        // This is the variable you change weekly:
-        const mostRecentDevotion = "devotion1.html";
+  <script>
+    function getWeekNumber(d) {
+      d = new Date(Date.UTC(d.getFullYear(), d.getMonth(), d.getDate()));
+      const dayNum = d.getUTCDay() || 7;
+      d.setUTCDate(d.getUTCDate() + 4 - dayNum);
+      const yearStart = new Date(Date.UTC(d.getUTCFullYear(),0,1));
+      return Math.ceil((((d - yearStart) / 86400000) + 1)/7);
+    }
 
-        // Find the link and update its href
-        const recentDevotionLink = document.getElementById("recent-devotion");
-        recentDevotionLink.href = mostRecentDevotion;
+    const today = new Date();
+    const options = { year: 'numeric', month: 'long', day: 'numeric' };
+    const formattedDate = today.toLocaleDateString(undefined, options);
+    const weekNumber = getWeekNumber(today);
 
-        // Functions to format date and week number
-        function formatDate(date) {
-            const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-            return date.toLocaleDateString(undefined, options);
-        }
-
-        function getWeekNumber(date) {
-            const tempDate = new Date(date.getTime());
-            tempDate.setHours(0, 0, 0, 0);
-            tempDate.setDate(tempDate.getDate() + 3 - ((tempDate.getDay() + 6) % 7));
-            const week1 = new Date(tempDate.getFullYear(), 0, 4);
-            return 1 + Math.round(((tempDate.getTime() - week1.getTime()) / 86400000 - 3 + ((week1.getDay() + 6) % 7)) / 7);
-        }
-
-        const today = new Date();
-        const dateString = formatDate(today);
-        const weekNumber = getWeekNumber(today);
-
-        const display = document.getElementById('dateWeekDisplay');
-        display.textContent = `Today is ${dateString}. This is week number ${weekNumber} of the year.`;
-    </script>
+    document.getElementById('dateWeek').textContent = `Today is ${formattedDate}, Week number ${weekNumber}`;
+  </script>
 </body>
 </html>
