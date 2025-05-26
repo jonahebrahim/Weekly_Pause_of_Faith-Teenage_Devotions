@@ -31,11 +31,6 @@
       margin: 0 0 25px;
       color: #444;
     }
-    #dateWeek {
-      font-style: italic;
-      color: #555;
-      margin-bottom: 30px;
-    }
     .image-section {
       margin-bottom: 40px;
     }
@@ -82,7 +77,6 @@
     Welcome! This site is your weekly place to pause, reflect, and grow in faith through devotions designed especially for teens.  
     Explore meaningful prayer ideas and spiritual encouragement every week.
   </p>
-  <div id="dateWeek"></div>
 
   <div class="image-section">
     <p>Teaching Teens to Pray: Building a strong prayer life as a foundation for faith.</p>
@@ -98,22 +92,5 @@
     <button onclick="location.href='devotion1.html'">Most Recent Devotion</button>
     <button onclick="location.href='devotion-list.html'">See All Devotions</button>
   </div>
-
-  <script>
-    function getWeekNumber(d) {
-      d = new Date(Date.UTC(d.getFullYear(), d.getMonth(), d.getDate()));
-      const dayNum = d.getUTCDay() || 7;
-      d.setUTCDate(d.getUTCDate() + 4 - dayNum);
-      const yearStart = new Date(Date.UTC(d.getUTCFullYear(),0,1));
-      return Math.ceil((((d - yearStart) / 86400000) + 1)/7);
-    }
-
-    const today = new Date();
-    const options = { year: 'numeric', month: 'long', day: 'numeric' };
-    const formattedDate = today.toLocaleDateString(undefined, options);
-    const weekNumber = getWeekNumber(today);
-
-    document.getElementById('dateWeek').textContent = `Today is ${formattedDate}, Week number ${weekNumber}`;
-  </script>
 </body>
 </html>
