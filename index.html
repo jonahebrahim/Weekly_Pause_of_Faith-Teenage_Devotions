@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Weekly Pause of Faith</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 40px auto;
+            padding: 0 20px;
+            background-color: #f9f9f9;
+            color: #333;
+            text-align: center;
+        }
+        header {
+            margin-bottom: 30px;
+        }
+        .date-week {
+            font-weight: bold;
+            font-size: 1.2em;
+            margin-bottom: 20px;
+        }
+        p.intentions {
+            font-size: 1em;
+            line-height: 1.5em;
+            margin-bottom: 30px;
+        }
+        .btn {
+            display: inline-block;
+            margin: 10px 15px;
+            padding: 12px 25px;
+            font-size: 1.1em;
+            color: white;
+            background-color: #007BFF;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Weekly Pause of Faith</h1>
+        <p><em>Devotions for Teens</em></p>
+    </header>
+
+    <div class="date-week" id="dateWeekDisplay">
+        <!-- Date and week number will appear here -->
+    </div>
+
+    <p class="intentions">
+        This site exists to provide teens with a weekly pause — a chance to reflect, pray, and grow closer to God.
+        Each week, we share a devotion that’s simple, honest, and made just for you.  
+        Whether you’re new to faith or have been walking with Jesus for a while, this space is here to encourage and inspire you.
+    </p>
+
+    <!-- Buttons to devotions -->
+    <a href="#" id="recent-devotion" class="btn">Most Recent Devotion</a>
+    <a href="devotion-list.html" class="btn">See All Devotions</a>
+
+    <script>
+        // This is the variable you change weekly:
+        const mostRecentDevotion = "devotion1.html";
+
+        // Find the link and update its href
+        const recentDevotionLink = document.getElementById("recent-devotion");
+        recentDevotionLink.href = mostRecentDevotion;
+
+        // Functions to format date and week number
+        function formatDate(date) {
+            const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+            return date.toLocaleDateString(undefined, options);
+        }
+
+        function getWeekNumber(date) {
+            const tempDate = new Date(date.getTime());
+            tempDate.setHours(0, 0, 0, 0);
+            tempDate.setDate(tempDate.getDate() + 3 - ((tempDate.getDay() + 6) % 7));
+            const week1 = new Date(tempDate.getFullYear(), 0, 4);
+            return 1 + Math.round(((tempDate.getTime() - week1.getTime()) / 86400000 - 3 + ((week1.getDay() + 6) % 7)) / 7);
+        }
+
+        const today = new Date();
+        const dateString = formatDate(today);
+        const weekNumber = getWeekNumber(today);
+
+        const display = document.getElementById('dateWeekDisplay');
+        display.textContent = `Today is ${dateString}. This is week number ${weekNumber} of the year.`;
+    </script>
+</body>
+</html>
