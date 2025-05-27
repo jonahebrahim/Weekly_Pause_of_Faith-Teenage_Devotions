@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Weekly Pause of Faith - Devotion 01 June 2025</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f9f9f9;
+      color: #333;
+      margin: 20px;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.6;
+    }
+    h1, h2, h3 {
+      color: #2a5d84;
+    }
+    .theme {
+      background-color: #2a5d84;
+      color: white;
+      padding: 10px 15px;
+      border-radius: 8px;
+      margin-bottom: 15px;
+    }
+    .verse-box {
+      background-color: #d9e9f9;
+      border-radius: 12px;
+      padding: 15px 20px;
+      margin: 15px 0;
+      font-style: italic;
+      box-shadow: inset 0 0 8px #a4c2e0;
+      color: #0a3b5d;
+    }
+    .memory-verse {
+      background-color: #194d79;
+      color: #cce6ff;
+      font-weight: bold;
+    }
+    .prayer {
+      background-color: #f0f8ff;
+      border-left: 5px solid #2a5d84;
+      padding-left: 15px;
+      margin-top: 20px;
+      font-style: italic;
+    }
+    .section {
+      margin-bottom: 25px;
+    }
+    .question-box {
+      background-color: #f0f4f8;
+      border-left: 4px solid #2a5d84;
+      padding: 12px 15px;
+      margin: 20px 0;
+      font-weight: bold;
+      color: #1a3d5a;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Weekly Pause of Faith</h1>
+  <h2>Devotion for the Week of 1st June 2025</h2>
+
+  <div class="section theme">
+    <h3>Month’s Theme: You Are Called Now</h3>
+    <p>God’s not waiting for you to grow up or be perfect. He’s calling you to live with purpose and faith right now — in school, with friends, and in your heart.</p>
+  </div>
+
+  <div class="section theme" style="background-color:#4a84b3;">
+    <h3>This Week’s Focus: God Is Close When It Hurts</h3>
+    <p>Pain, loneliness, pressure — God doesn’t run away from these. He draws near.</p>
+  </div>
+
+  <div class="section">
+    <h3>Monthly Memory Verse</h3>
+    <div class="verse-box memory-verse">
+      “For I know the plans I have for you,” declares the Lord,<br>
+      “plans to prosper you and not to harm you, plans to give you hope and a future.”<br>
+      — Jeremiah 29:11 (NIV)
+    </div>
+    <p>God, please help us remember Your word,<br>to trust Your plans, and to hold onto hope every day.</p>
+  </div>
+
+  <div class="section">
+    <h3>This Week’s Bible Passage</h3>
+    <div class="verse-box">
+      “The righteous cry out, and the Lord hears them;<br>
+      he delivers them from all their troubles.<br>
+      The Lord is close to the brokenhearted<br>
+      and saves those who are crushed in spirit.<br>
+      The righteous person may have many troubles,<br>
+      but the Lord delivers him from them all;<br>
+      he protects all his bones,<br>
+      not one of them will be broken.”<br>
+      — Psalm 34:17–20 (NIV)
+    </div>
+  </div>
+
+  <div class="section">
+    <h3>Devotion</h3>
+    <p>This week’s passage reminds us that being a follower of God doesn’t mean life will be easy or free from troubles. In fact, the Bible is honest about the hard times we face — loneliness, sadness, confusion, or even feeling brokenhearted. But what it also promises is something powerful: God is close to us in those moments.</p>
+
+    <p>When you cry out in pain or frustration, God hears you. He isn’t distant or unaware; He is right there beside you, ready to comfort and protect. Even when you feel crushed in spirit, He wants to lift you up and carry your burdens.</p>
+
+    <p>Sometimes it can be hard to believe that God truly understands what you’re going through, especially when things seem unfair or too difficult. But remember, the Lord knows every part of your story — every joy, every struggle, every silent prayer.</p>
+
+    <p>You might not feel His presence all the time, and that’s okay. Faith isn’t about always feeling close to God; it’s about trusting His promises even when feelings don’t match.</p>
+
+    <p>This week, try to hold onto this truth: God protects you. Not one part of your life is overlooked or ignored by Him. He cares deeply about you and is working in your life, even through hard times.</p>
+
+    <p>Let this passage be a reminder that you are never alone. God’s love surrounds you, and He will give you strength to keep going. When you feel overwhelmed, remember to turn to Him and cry out — because He hears you.</p>
+  </div>
+
+  <div class="section question-box">
+    <h3>Reflective Question</h3>
+    <p>What is one struggle or worry you want to bring to God this week? How can knowing He is close change the way you feel about it?</p>
+  </div>
+
+  <div class="section question-box">
+    <h3>What Word or Phrase Stands Out to You?</h3>
+    <p>Take a moment to notice if any part of the memory verse or this week’s Bible passage speaks most clearly to you. Write it down or remember it.</p>
+  </div>
+
+  <div class="section">
+    <h3>Memory Verse Reminder</h3>
+    <div class="verse-box memory-verse">
+      “For I know the plans I have for you,” declares the Lord,<br>
+      “plans to prosper you and not to harm you, plans to give you hope and a future.”<br>
+      — Jeremiah 29:11 (NIV)
+    </div>
+  </div>
+
+  <div class="section prayer">
+    <h3>Prayer</h3>
+    <p>God, thank You that You hear me and are close when I’m hurting. Help me trust Your plans and find peace even in hard times. Amen.</p>
+  </div>
+
+</body>
+</html>
