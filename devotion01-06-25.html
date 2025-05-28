@@ -18,6 +18,7 @@
     }
     h1, h2, h3 {
       color: #2a5d84;
+      text-align: center;
     }
     .theme {
       background-color: #2a5d84;
@@ -58,12 +59,15 @@
       font-weight: bold;
       color: #1a3d5a;
     }
-    .top-button {
+    .top-buttons {
       position: absolute;
       top: 20px;
       right: 20px;
+      display: flex;
+      gap: 10px;
     }
-    .top-button a {
+    .top-buttons a,
+    .top-buttons button {
       background-color: #2a5d84;
       color: white;
       padding: 8px 16px;
@@ -71,23 +75,33 @@
       text-decoration: none;
       font-weight: bold;
       box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      border: none;
+      cursor: pointer;
     }
-    .top-button a:hover {
+    .top-buttons a:hover,
+    .top-buttons button:hover {
       background-color: #1a4465;
+    }
+    footer {
+      text-align: center;
+      font-size: 14px;
+      color: #999;
+      margin-top: 40px;
     }
   </style>
 </head>
 <body>
 
-  <div class="top-button">
+  <div class="top-buttons">
     <a href="index.html">← Home</a>
+    <button onclick="window.print()">Download PDF</button>
   </div>
 
-  <h1><CENTER>Weekly Pause of Faith</h1>
-  <h2>Devotion for the Week of 1st June 2025</CENTER></h2>
+  <h1>Weekly Pause of Faith</h1>
+  <h2>Devotion for the Week of 1st June 2025</h2>
 
   <div class="section theme">
-    <h3>Month’s Theme: You Are Called Now</h>
+    <h3>Month’s Theme: You Are Called Now</h3>
     <p>God’s not waiting for you to grow up or be perfect. He’s calling you to live with purpose and faith right now — in school, with friends, and in your heart.</p>
   </div>
 
@@ -159,8 +173,10 @@
     <h3>Prayer</h3>
     <p>God, thank You that You hear me and are close when I’m hurting. Help me trust Your plans and find peace even in hard times. Amen.</p>
   </div>
-<footer>
-  &copy; 2025 Weekly Pause of Faith. All rights reserved
-</footer>
+
+  <footer>
+    &copy; 2025 Weekly Pause of Faith. All rights reserved.
+  </footer>
+
 </body>
 </html>
