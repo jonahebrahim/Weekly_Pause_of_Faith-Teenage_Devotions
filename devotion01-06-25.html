@@ -8,7 +8,7 @@
     body {
       font-family: Arial, sans-serif;
       background: #f9f9f9;
-      color: #DBE9F4;
+      color: #0a2940; /* Navy text for regular content */
       margin: 20px;
       max-width: 700px;
       margin-left: auto;
@@ -16,16 +16,23 @@
       line-height: 1.6;
       position: relative;
     }
+
     h1, h2, h3 {
       color: #2a5d84;
     }
+
     .theme {
       background-color: #2a5d84;
-      color: #fff9c4; /* Light yellow for better contrast */
+      color: white;
       padding: 10px 15px;
       border-radius: 8px;
       margin-bottom: 15px;
     }
+
+    .theme h3 {
+      color: #ffefba; /* Lighter yellowish heading for better contrast */
+    }
+
     .verse-box {
       background-color: #d9e9f9;
       border-radius: 12px;
@@ -35,11 +42,13 @@
       box-shadow: inset 0 0 8px #a4c2e0;
       color: #0a3b5d;
     }
+
     .memory-verse {
       background-color: #194d79;
       color: #cce6ff;
       font-weight: bold;
     }
+
     .prayer {
       background-color: #f0f8ff;
       border-left: 5px solid #2a5d84;
@@ -47,9 +56,11 @@
       margin-top: 20px;
       font-style: italic;
     }
+
     .section {
       margin-bottom: 25px;
     }
+
     .question-box {
       background-color: #f0f4f8;
       border-left: 4px solid #2a5d84;
@@ -58,11 +69,13 @@
       font-weight: bold;
       color: #1a3d5a;
     }
+
     .top-button {
       position: absolute;
       top: 20px;
       right: 20px;
     }
+
     .top-button a {
       background-color: #2a5d84;
       color: white;
@@ -72,6 +85,7 @@
       font-weight: bold;
       box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     }
+
     .top-button a:hover {
       background-color: #1a4465;
     }
@@ -83,8 +97,8 @@
     <a href="index.html">← Home</a>
   </div>
 
-  <h1><center>Weekly Pause of Faith</center></h1>
-  <h2><center>Devotion for the Week of 1st June 2025</center></h2>
+  <h1 style="text-align: center;">Weekly Pause of Faith</h1>
+  <h2 style="text-align: center;">Devotion for the Week of 1st June 2025</h2>
 
   <div class="section theme">
     <h3>Month’s Theme: You Are Called Now</h3>
@@ -160,8 +174,9 @@
     <p>God, thank You that You hear me and are close when I’m hurting. Help me trust Your plans and find peace even in hard times. Amen.</p>
   </div>
 
-  <footer>
-    &copy; 2025 Weekly Pause of Faith. All rights reserved
+  <footer style="text-align: center; margin-top: 40px; color: #888;">
+    &copy; 2025 Weekly Pause of Faith. All rights reserved.
   </footer>
+
 </body>
 </html>
