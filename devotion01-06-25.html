@@ -18,11 +18,10 @@
     }
     h1, h2, h3 {
       color: #2a5d84;
-      text-align: center;
     }
     .theme {
       background-color: #2a5d84;
-      color: ADD8E6;
+      color: #fff9c4; /* Light yellow for better contrast */
       padding: 10px 15px;
       border-radius: 8px;
       margin-bottom: 15px;
@@ -59,15 +58,12 @@
       font-weight: bold;
       color: #1a3d5a;
     }
-    .top-buttons {
+    .top-button {
       position: absolute;
       top: 20px;
       right: 20px;
-      display: flex;
-      gap: 10px;
     }
-    .top-buttons a,
-    .top-buttons button {
+    .top-button a {
       background-color: #2a5d84;
       color: white;
       padding: 8px 16px;
@@ -75,26 +71,20 @@
       text-decoration: none;
       font-weight: bold;
       box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-      border: none;
-      cursor: pointer;
     }
-    .top-buttons a:hover,
-    .top-buttons button:hover {
+    .top-button a:hover {
       background-color: #1a4465;
-    }
-    footer {
-      text-align: center;
-      font-size: 14px;
-      color: #999;
-      margin-top: 40px;
     }
   </style>
 </head>
 <body>
 
- 
-  <h1>Weekly Pause of Faith</h1>
-  <h2>Devotion for the Week of 1st June 2025</h2>
+  <div class="top-button">
+    <a href="index.html">← Home</a>
+  </div>
+
+  <h1><center>Weekly Pause of Faith</center></h1>
+  <h2><center>Devotion for the Week of 1st June 2025</center></h2>
 
   <div class="section theme">
     <h3>Month’s Theme: You Are Called Now</h3>
@@ -171,8 +161,7 @@
   </div>
 
   <footer>
-    &copy; 2025 Weekly Pause of Faith. All rights reserved.
+    &copy; 2025 Weekly Pause of Faith. All rights reserved
   </footer>
-
 </body>
 </html>
