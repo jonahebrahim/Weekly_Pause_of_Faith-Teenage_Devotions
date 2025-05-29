@@ -2,22 +2,25 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Weekly Pause of Faith - Devotion 01 June 2025</title>
   <style>
     body {
       font-family: Arial, sans-serif;
       background: #f9f9f9;
       color: #000435;
-      margin: 20px auto;
+      margin: 10px;
       max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
       line-height: 1.6;
       position: relative;
-      transition: font-size 0.3s, line-height 0.3s;
+      font-size: 15px;
     }
 
     h1, h2, h3 {
       color: #2a5d84;
+      font-size: 1.2em;
     }
 
     .theme {
@@ -71,31 +74,32 @@
 
     .top-button {
       position: absolute;
-      top: 20px;
-      right: 20px;
+      top: 10px;
+      right: 10px;
+      z-index: 1001;
     }
 
     .top-button a {
       background-color: #2a5d84;
       color: white;
-      padding: 8px 16px;
+      padding: 6px 12px;
       border-radius: 8px;
       text-decoration: none;
       font-weight: bold;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      font-size: 0.9em;
     }
 
     .top-button a:hover {
       background-color: #1a4465;
     }
 
-    /* Settings icon */
+    /* Settings button */
     .settings-button {
       position: absolute;
-      top: 20px;
-      left: 20px;
-      cursor: pointer;
+      top: 10px;
+      left: 10px;
       z-index: 1001;
+      cursor: pointer;
     }
 
     .settings-button img {
@@ -103,106 +107,75 @@
       height: 28px;
     }
 
-    /* Side menu */
-    .side-menu {
+    /* Settings menu */
+    .settings-menu {
       position: fixed;
       top: 0;
       left: -250px;
-      width: 250px;
+      width: 220px;
       height: 100%;
-      background-color: #ffffff;
-      box-shadow: 2px 0 10px rgba(0,0,0,0.2);
+      background-color: #eaf2f8;
+      box-shadow: 2px 0 5px rgba(0,0,0,0.2);
       padding: 20px;
       transition: left 0.3s ease;
       z-index: 1000;
     }
 
-    .side-menu.open {
+    .settings-menu.active {
       left: 0;
     }
 
-    .side-menu h3 {
+    .settings-menu h3 {
       margin-top: 0;
+      font-size: 1em;
     }
 
-    .side-menu label {
-      display: block;
-      margin-top: 20px;
+    .toggle {
+      margin-top: 15px;
     }
 
-    /* Toggle switch style */
-    .switch {
-      position: relative;
-      display: inline-block;
-      width: 50px;
-      height: 24px;
+    footer {
+      text-align: center;
+      margin-top: 40px;
+      color: #888;
+      font-size: 0.9em;
     }
 
-    .switch input {
-      opacity: 0;
-      width: 0;
-      height: 0;
-    }
+    @media (max-width: 500px) {
+      body {
+        font-size: 14px;
+        margin: 8px;
+      }
 
-    .slider {
-      position: absolute;
-      cursor: pointer;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background-color: #ccc;
-      transition: 0.3s;
-      border-radius: 24px;
-    }
+      h1, h2, h3 {
+        font-size: 1.1em;
+      }
 
-    .slider:before {
-      position: absolute;
-      content: "";
-      height: 18px;
-      width: 18px;
-      left: 3px;
-      bottom: 3px;
-      background-color: white;
-      transition: 0.3s;
-      border-radius: 50%;
-    }
-
-    input:checked + .slider {
-      background-color: #2a5d84;
-    }
-
-    input:checked + .slider:before {
-      transform: translateX(26px);
-    }
-
-    /* Mobile view styles */
-    .mobile-view {
-      font-size: 14px;
-      line-height: 1.4;
-      padding: 10px;
+      .verse-box, .question-box {
+        padding: 12px 14px;
+      }
     }
   </style>
 </head>
 <body>
 
-  <!-- Settings Icon -->
-  <div class="settings-button" onclick="toggleMenu()">
+  <!-- Settings Button -->
+  <div class="settings-button" onclick="toggleSettings()">
     <img src="https://cdn.creazilla.com/icons/3235326/grey-settings-icon-lg.png" alt="Settings">
   </div>
 
-  <!-- Slide-in Settings Menu -->
-  <div class="side-menu" id="settingsMenu">
-    <h3>Settings</h3>
-    <label>
-      Mobile View
-      <label class="switch">
-        <input type="checkbox" id="viewToggle" onchange="toggleView()">
-        <span class="slider"></span>
+  <!-- Settings Menu -->
+  <div id="settingsMenu" class="settings-menu">
+    <h3>Display Mode</h3>
+    <div class="toggle">
+      <label>
+        <input type="checkbox" id="modeToggle" onchange="toggleMode()" />
+        Switch to PC mode
       </label>
-    </label>
+    </div>
   </div>
 
+  <!-- Home Button -->
   <div class="top-button">
     <a href="index.html">← Home</a>
   </div>
@@ -248,6 +221,7 @@
   <div class="section">
     <h3>Devotion</h3>
     <p>This week’s passage reminds us that being a follower of God doesn’t mean life will be easy or free from troubles...</p>
+    <!-- (Keep the rest of your devotion paragraphs here) -->
   </div>
 
   <div class="section question-box">
@@ -274,19 +248,27 @@
     <p>God, thank You that You hear me and are close when I’m hurting. Help me trust Your plans and find peace even in hard times. Amen.</p>
   </div>
 
-  <footer style="text-align: center; margin-top: 40px; color: #888;">
+  <footer>
     &copy; 2025 Weekly Pause of Faith. All rights reserved.
   </footer>
 
   <script>
-    function toggleMenu() {
-      const menu = document.getElementById('settingsMenu');
-      menu.classList.toggle('open');
+    function toggleSettings() {
+      const menu = document.getElementById("settingsMenu");
+      menu.classList.toggle("active");
     }
 
-    function toggleView() {
-      document.body.classList.toggle('mobile-view');
+    function toggleMode() {
+      const checkbox = document.getElementById("modeToggle");
+      if (checkbox.checked) {
+        document.body.style.maxWidth = "100%";
+        document.body.style.fontSize = "16px";
+      } else {
+        document.body.style.maxWidth = "700px";
+        document.body.style.fontSize = "15px";
+      }
     }
   </script>
+
 </body>
 </html>
