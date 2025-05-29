@@ -9,12 +9,11 @@
       font-family: Arial, sans-serif;
       background: #f9f9f9;
       color: #000435;
-      margin: 20px;
+      margin: 20px auto;
       max-width: 700px;
-      margin-left: auto;
-      margin-right: auto;
       line-height: 1.6;
       position: relative;
+      transition: font-size 0.3s, line-height 0.3s;
     }
 
     h1, h2, h3 {
@@ -29,10 +28,8 @@
       margin-bottom: 15px;
     }
 
-    /* Only change here: add text shadow to month's theme h3 for visibility */
     .theme h3 {
-      color: #e4f6f8; 
-      text-shadow: 1px 1px 2px #00000099; /* subtle dark shadow */
+      color: #e4f6f8;
     }
 
     .verse-box {
@@ -91,9 +88,120 @@
     .top-button a:hover {
       background-color: #1a4465;
     }
+
+    /* Settings icon */
+    .settings-button {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      cursor: pointer;
+      z-index: 1001;
+    }
+
+    .settings-button img {
+      width: 28px;
+      height: 28px;
+    }
+
+    /* Side menu */
+    .side-menu {
+      position: fixed;
+      top: 0;
+      left: -250px;
+      width: 250px;
+      height: 100%;
+      background-color: #ffffff;
+      box-shadow: 2px 0 10px rgba(0,0,0,0.2);
+      padding: 20px;
+      transition: left 0.3s ease;
+      z-index: 1000;
+    }
+
+    .side-menu.open {
+      left: 0;
+    }
+
+    .side-menu h3 {
+      margin-top: 0;
+    }
+
+    .side-menu label {
+      display: block;
+      margin-top: 20px;
+    }
+
+    /* Toggle switch style */
+    .switch {
+      position: relative;
+      display: inline-block;
+      width: 50px;
+      height: 24px;
+    }
+
+    .switch input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+
+    .slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #ccc;
+      transition: 0.3s;
+      border-radius: 24px;
+    }
+
+    .slider:before {
+      position: absolute;
+      content: "";
+      height: 18px;
+      width: 18px;
+      left: 3px;
+      bottom: 3px;
+      background-color: white;
+      transition: 0.3s;
+      border-radius: 50%;
+    }
+
+    input:checked + .slider {
+      background-color: #2a5d84;
+    }
+
+    input:checked + .slider:before {
+      transform: translateX(26px);
+    }
+
+    /* Mobile view styles */
+    .mobile-view {
+      font-size: 14px;
+      line-height: 1.4;
+      padding: 10px;
+    }
   </style>
 </head>
 <body>
+
+  <!-- Settings Icon -->
+  <div class="settings-button" onclick="toggleMenu()">
+    <img src="https://cdn.creazilla.com/icons/3235326/grey-settings-icon-lg.png" alt="Settings">
+  </div>
+
+  <!-- Slide-in Settings Menu -->
+  <div class="side-menu" id="settingsMenu">
+    <h3>Settings</h3>
+    <label>
+      Mobile View
+      <label class="switch">
+        <input type="checkbox" id="viewToggle" onchange="toggleView()">
+        <span class="slider"></span>
+      </label>
+    </label>
+  </div>
 
   <div class="top-button">
     <a href="index.html">← Home</a>
@@ -139,17 +247,7 @@
 
   <div class="section">
     <h3>Devotion</h3>
-    <p>This week’s passage reminds us that being a follower of God doesn’t mean life will be easy or free from troubles. In fact, the Bible is honest about the hard times we face — loneliness, sadness, confusion, or even feeling brokenhearted. But what it also promises is something powerful: God is close to us in those moments.</p>
-
-    <p>When you cry out in pain or frustration, God hears you. He isn’t distant or unaware; He is right there beside you, ready to comfort and protect. Even when you feel crushed in spirit, He wants to lift you up and carry your burdens.</p>
-
-    <p>Sometimes it can be hard to believe that God truly understands what you’re going through, especially when things seem unfair or too difficult. But remember, the Lord knows every part of your story — every joy, every struggle, every silent prayer.</p>
-
-    <p>You might not feel His presence all the time, and that’s okay. Faith isn’t about always feeling close to God; it’s about trusting His promises even when feelings don’t match.</p>
-
-    <p>This week, try to hold onto this truth: God protects you. Not one part of your life is overlooked or ignored by Him. He cares deeply about you and is working in your life, even through hard times.</p>
-
-    <p>Let this passage be a reminder that you are never alone. God’s love surrounds you, and He will give you strength to keep going. When you feel overwhelmed, remember to turn to Him and cry out — because He hears you.</p>
+    <p>This week’s passage reminds us that being a follower of God doesn’t mean life will be easy or free from troubles...</p>
   </div>
 
   <div class="section question-box">
@@ -180,5 +278,15 @@
     &copy; 2025 Weekly Pause of Faith. All rights reserved.
   </footer>
 
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById('settingsMenu');
+      menu.classList.toggle('open');
+    }
+
+    function toggleView() {
+      document.body.classList.toggle('mobile-view');
+    }
+  </script>
 </body>
 </html>
