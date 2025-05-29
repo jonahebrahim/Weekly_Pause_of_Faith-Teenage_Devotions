@@ -2,25 +2,23 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Weekly Pause of Faith - Devotion 01 June 2025</title>
   <style>
     body {
       font-family: Arial, sans-serif;
       background: #f9f9f9;
       color: #000435;
-      margin: 10px;
+      margin: 20px;
       max-width: 700px;
       margin-left: auto;
       margin-right: auto;
       line-height: 1.6;
       position: relative;
-      font-size: 15px;
     }
 
     h1, h2, h3 {
       color: #2a5d84;
-      font-size: 1.2em;
     }
 
     .theme {
@@ -31,8 +29,10 @@
       margin-bottom: 15px;
     }
 
+    /* Only change here: add text shadow to month's theme h3 for visibility */
     .theme h3 {
-      color: #e4f6f8;
+      color: #e4f6f8; 
+      text-shadow: 1px 1px 2px #00000099; /* subtle dark shadow */
     }
 
     .verse-box {
@@ -74,108 +74,27 @@
 
     .top-button {
       position: absolute;
-      top: 10px;
-      right: 10px;
-      z-index: 1001;
+      top: 20px;
+      right: 20px;
     }
 
     .top-button a {
       background-color: #2a5d84;
       color: white;
-      padding: 6px 12px;
+      padding: 8px 16px;
       border-radius: 8px;
       text-decoration: none;
       font-weight: bold;
-      font-size: 0.9em;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     }
 
     .top-button a:hover {
       background-color: #1a4465;
     }
-
-    /* Settings button */
-    .settings-button {
-      position: absolute;
-      top: 10px;
-      left: 10px;
-      z-index: 1001;
-      cursor: pointer;
-    }
-
-    .settings-button img {
-      width: 28px;
-      height: 28px;
-    }
-
-    /* Settings menu */
-    .settings-menu {
-      position: fixed;
-      top: 0;
-      left: -250px;
-      width: 220px;
-      height: 100%;
-      background-color: #eaf2f8;
-      box-shadow: 2px 0 5px rgba(0,0,0,0.2);
-      padding: 20px;
-      transition: left 0.3s ease;
-      z-index: 1000;
-    }
-
-    .settings-menu.active {
-      left: 0;
-    }
-
-    .settings-menu h3 {
-      margin-top: 0;
-      font-size: 1em;
-    }
-
-    .toggle {
-      margin-top: 15px;
-    }
-
-    footer {
-      text-align: center;
-      margin-top: 40px;
-      color: #888;
-      font-size: 0.9em;
-    }
-
-    @media (max-width: 500px) {
-      body {
-        font-size: 14px;
-        margin: 8px;
-      }
-
-      h1, h2, h3 {
-        font-size: 1.1em;
-      }
-
-      .verse-box, .question-box {
-        padding: 12px 14px;
-      }
-    }
   </style>
 </head>
 <body>
 
-  <!-- Settings Button -->
-  <div class="settings-button" onclick="toggleSettings()">
-    <img src="https://cdn.creazilla.com/icons/3235326/grey-settings-icon-lg.png" alt="Settings">
-  </div>
-
-  <!-- Settings Menu -->
-  <div id="settingsMenu" class="settings-menu">
-    <h3>Display Mode</h3>
-    <div class="toggle">
-      <label>
-        <input type="checkbox" id="modeToggle" onchange="toggleMode()" />
-        Switch to PC mode
-      </label>
-    </div>
-  </div>
-
-  <!-- Home Button -->
   <div class="top-button">
     <a href="index.html">← Home</a>
   </div>
@@ -207,68 +126,3 @@
     <h3>This Week’s Bible Passage</h3>
     <div class="verse-box">
       “The righteous cry out, and the Lord hears them;<br>
-      he delivers them from all their troubles.<br>
-      The Lord is close to the brokenhearted<br>
-      and saves those who are crushed in spirit.<br>
-      The righteous person may have many troubles,<br>
-      but the Lord delivers him from them all;<br>
-      he protects all his bones,<br>
-      not one of them will be broken.”<br>
-      — Psalm 34:17–20 (NIV)
-    </div>
-  </div>
-
-  <div class="section">
-    <h3>Devotion</h3>
-    <p>This week’s passage reminds us that being a follower of God doesn’t mean life will be easy or free from troubles...</p>
-    <!-- (Keep the rest of your devotion paragraphs here) -->
-  </div>
-
-  <div class="section question-box">
-    <h3>Reflective Question</h3>
-    <p>What is one struggle or worry you want to bring to God this week? How can knowing He is close change the way you feel about it?</p>
-  </div>
-
-  <div class="section question-box">
-    <h3>What Word or Phrase Stands Out to You?</h3>
-    <p>Take a moment to notice if any part of the memory verse or this week’s Bible passage speaks most clearly to you. Write it down or remember it.</p>
-  </div>
-
-  <div class="section">
-    <h3>Memory Verse Reminder</h3>
-    <div class="verse-box memory-verse">
-      “For I know the plans I have for you,” declares the Lord,<br>
-      “plans to prosper you and not to harm you, plans to give you hope and a future.”<br>
-      — Jeremiah 29:11 (NIV)
-    </div>
-  </div>
-
-  <div class="section prayer">
-    <h3>Prayer</h3>
-    <p>God, thank You that You hear me and are close when I’m hurting. Help me trust Your plans and find peace even in hard times. Amen.</p>
-  </div>
-
-  <footer>
-    &copy; 2025 Weekly Pause of Faith. All rights reserved.
-  </footer>
-
-  <script>
-    function toggleSettings() {
-      const menu = document.getElementById("settingsMenu");
-      menu.classList.toggle("active");
-    }
-
-    function toggleMode() {
-      const checkbox = document.getElementById("modeToggle");
-      if (checkbox.checked) {
-        document.body.style.maxWidth = "100%";
-        document.body.style.fontSize = "16px";
-      } else {
-        document.body.style.maxWidth = "700px";
-        document.body.style.fontSize = "15px";
-      }
-    }
-  </script>
-
-</body>
-</html>
